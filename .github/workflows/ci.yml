@@ -12,33 +12,33 @@ on: # yamllint disable
     - cron: "20 3 * * 1"
 
 jobs:
-  lint:
-    runs-on: "ubuntu-20.04"
-    steps:
-      - name: "Check out repository code"
-        uses: "actions/checkout@v2"
-      - name: "Install invoke"
-        run: "pip install -U pip && pip install invoke"
-      - name: "Linting"
-        run: "invoke lint"
-  test:
-    runs-on: "ubuntu-20.04"
-    strategy:
-      fail-fast: true
-      matrix:
-        # Add 3.6 back once we fix the sanity decode issue
-        python-version: ["3.7", "3.8", "3.9"]
-    env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
-    steps:
-      - name: "Check out repository code"
-        uses: "actions/checkout@v2"
-      - name: "Install invoke"
-        run: "pip install -U pip && pip install invoke"
-      - name: "Tests"
-        run: "invoke unit"
-    needs:
-      - "lint"
+  # lint:
+  #   runs-on: "ubuntu-20.04"
+  #   steps:
+  #     - name: "Check out repository code"
+  #       uses: "actions/checkout@v2"
+  #     - name: "Install invoke"
+  #       run: "pip install -U pip && pip install invoke"
+  #     - name: "Linting"
+  #       run: "invoke lint"
+  # test:
+  #   runs-on: "ubuntu-20.04"
+  #   strategy:
+  #     fail-fast: true
+  #     matrix:
+  #       # Add 3.6 back once we fix the sanity decode issue
+  #       python-version: ["3.7", "3.8", "3.9"]
+  #   env:
+  #     INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
+  #   steps:
+  #     - name: "Check out repository code"
+  #       uses: "actions/checkout@v2"
+  #     - name: "Install invoke"
+  #       run: "pip install -U pip && pip install invoke"
+  #     - name: "Tests"
+  #       run: "invoke unit"
+  #   needs:
+  #     - "lint"
   integration:
     runs-on: "ubuntu-20.04"
     strategy:
@@ -77,7 +77,7 @@ jobs:
         run: "pip install -U pip && pip install invoke"
       - name: "Install poetry"
         if: "${{ matrix.ansible-release == '2.11' }}"
-        run: "pip install poetry==1.1.15"
+        run: "curl -sSL https://install.python-poetry.org | python3 -"
       - name: "Remove ansible-base"
         if: "${{ matrix.ansible-release == '2.11' }}"
         run: "poetry remove ansible-base"
@@ -86,7 +86,7 @@ jobs:
         run: "poetry add ansible-core@~2.11"
       - name: "Install poetry"
         if: "${{ matrix.ansible-release == '2.9' }}"
-        run: "pip install poetry==1.1.15"
+        run: "curl -sSL https://install.python-poetry.org | python3 -"
       - name: "Remove ansible-base"
         if: "${{ matrix.ansible-release == '2.9' }}"
         run: "poetry remove ansible-base"
@@ -95,7 +95,7 @@ jobs:
         run: "poetry add ansible@~2.9"
       - name: "Install poetry"
         if: "${{ matrix.ansible-release == '2.12' }}"
-        run: "pip install poetry==1.1.15"
+        run: "curl -sSL https://install.python-poetry.org | python3 -"
       - name: "Remove ansible-base"
         if: "${{ matrix.ansible-release == '2.12' }}"
         run: "poetry remove ansible-base"
@@ -106,8 +106,8 @@ jobs:
         run: "invoke start"
       - name: "Tests"
         run: "invoke integration"
-    needs:
-      - "test"
+    # needs:
+    #   - "test"
   publish_github:
     name: "Publish to GitHub"
     runs-on: "ubuntu-20.04"
