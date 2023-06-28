@@ -74,6 +74,7 @@
       status: Active
       description: Test Location 2 Description
       location_type: "{{ location_type['key'] }}"
+      site: "{{ site['key'] }}"
       parent: "{{ test_create_min['location']['id'] }}"
       state: present
     register: test_create_max
@@ -88,6 +89,7 @@
         - test_create_max['location']['status'] == "active"
         - test_create_max['msg'] == "location Test Location 2 created"
         - test_create_max['location']['description'] == "Test Location 2 Description"
+        - test_create_max['location']['site'] == site["key"]
         - test_create_max['location']['location_type'] == location_type["key"]
         - test_create_max['location']['parent'] == test_create_min['location']['id']
 
@@ -99,6 +101,7 @@
       status: Active
       description: Test Location 2 Description
       location_type: "{{ location_type['key'] }}"
+      site: "{{ site['key'] }}"
       parent: "{{ test_create_min['location']['id'] }}"
       state: present
     register: test_create_max_idem
