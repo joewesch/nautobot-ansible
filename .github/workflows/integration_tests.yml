@@ -27,6 +27,10 @@ jobs:
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
+      - name: "Set up Python"
+        uses: "actions/setup-python@v2"
+        with:
+          python-version: "${{ inputs.python-version }}"
       - name: "Install invoke"
         run: "pip install -U pip && pip install invoke"
       - name: "Start containers"
@@ -41,6 +45,10 @@ jobs:
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
+      - name: "Set up Python"
+        uses: "actions/setup-python@v2"
+        with:
+          python-version: "${{ inputs.python-version }}"
       - name: "Install invoke"
         run: "pip install -U pip && pip install invoke"
       - name: "Install poetry"
