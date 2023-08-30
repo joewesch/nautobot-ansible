@@ -4,20 +4,26 @@ on: # yamllint disable
   workflow_call:
     inputs:
       # Default options for all jobs
-      runs_on:
+      runs-on:
         description: "The OS to run the job on"
         required: false
         default: "ubuntu-20.04"
         type: string
+      python-version:
+        description: "The Python version to use"
+        required: true
+        type: string
+      nautobot-version:
+        description: "The Nautobot version to use"
+        required: true
+        type: string
 
 jobs:
   integration_ansible_2_14:
-    runs-on: "${{ inputs.runs_on }}"
+    runs-on: "${{ inputs.runs-on }}"
     env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
-      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
-      PYTHON_VER: "${{ matrix.python-version }}"
-      NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ input.python-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ input.nautobot-version }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
@@ -28,12 +34,10 @@ jobs:
       - name: "Tests"
         run: "invoke integration"
   integration_ansible_2_15:
-    runs-on: "${{ inputs.runs_on }}"
+    runs-on: "${{ inputs.runs-on }}"
     env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
-      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
-      PYTHON_VER: "${{ matrix.python-version }}"
-      NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ input.python-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ input.nautobot-version }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"

@@ -51,6 +51,9 @@ jobs:
           - "1.4"
           - "1.5"
           - "1.6"
+    with:
+      python-version: "${{ matrix.python-version }}"
+      nautobot-version: "${{ matrix.nautobot-version }}"
     needs:
       - "unit"
   publish_github:
