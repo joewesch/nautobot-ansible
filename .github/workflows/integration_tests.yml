@@ -1,0 +1,43 @@
+---
+name: "Integration Tests"
+on: # yamllint disable
+  workflow_call:
+    inputs:
+      # Default options for all jobs
+      runs_on:
+        description: "The OS to run the job on"
+        required: false
+        default: "ubuntu-20.04"
+        type: string
+
+jobs:
+  integration_ansible_2_14:
+    runs-on: "${{ inputs.runs_on }}"
+    env:
+      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
+    steps:
+      - name: "Check out repository code"
+        uses: "actions/checkout@v3"
+      - name: "Install invoke"
+        run: "pip install -U pip && pip install invoke"
+      - name: "Start containers"
+        run: "invoke start"
+      - name: "Tests"
+        run: "invoke integration"
+  integration_ansible_2_15:
+    runs-on: "${{ inputs.runs_on }}"
+    env:
+      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
+    steps:
+      - name: "Check out repository code"
+        uses: "actions/checkout@v3"
+      - name: "Install invoke"
+        run: "pip install -U pip && pip install invoke"
+      - name: "Install ansible-core 2.15"
+        run: "poetry add ansible-core@~2.15"
+      - name: "Start containers"
+        run: "invoke start"
+      - name: "Tests"
+        run: "invoke integration"
