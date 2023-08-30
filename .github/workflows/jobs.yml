@@ -4,7 +4,7 @@ on: # yamllint disable
   workflow_call:
     inputs:
       # Default options for all jobs
-      runs_on:
+      runs-on:
         description: "The OS to run the job on"
         required: false
         default: "ubuntu-20.04"
@@ -12,7 +12,7 @@ on: # yamllint disable
 
 jobs:
   lint:
-    runs-on: "${{ inputs.runs_on }}"
+    runs-on: "${{ inputs.runs-on }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
@@ -21,7 +21,7 @@ jobs:
       - name: "Linting"
         run: "invoke lint"
   unit:
-    runs-on: "${{ inputs.runs_on }}"
+    runs-on: "${{ inputs.runs-on }}"
     strategy:
       fail-fast: false
       matrix:
@@ -58,7 +58,7 @@ jobs:
       - "unit"
   publish_github:
     name: "Publish to GitHub"
-    runs-on: "${{ inputs.runs_on }}"
+    runs-on: "${{ inputs.runs-on }}"
     if: "startsWith(github.ref, 'refs/tags/v')"
     steps:
       - name: "Check out repository code"
@@ -83,7 +83,7 @@ jobs:
       - "integration"
   publish_galaxy:
     name: "Publish to Ansible Galaxy"
-    runs-on: "${{ inputs.runs_on }}"
+    runs-on: "${{ inputs.runs-on }}"
     if: "startsWith(github.ref, 'refs/tags/v')"
     steps:
       - name: "Check out repository code"
