@@ -27,7 +27,7 @@ jobs:
       matrix:
         python-version:
           - "3.9"
-          # - "3.10"
+          - "3.10"
     env:
       INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
     steps:
@@ -46,7 +46,7 @@ jobs:
       matrix:
         python-version:
           - "3.9"
-          # - "3.10"
+          - "3.10"
         nautobot-version:
           - "1.4"
           - "1.5"
