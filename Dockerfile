@@ -54,9 +54,6 @@ RUN echo 'Running Black' && \
 # into an image with docker-compose for running the full test suite.
 FROM lint AS unittests
 
-# Remove black from dev dependencies to prevent conflicts with Ansible
-RUN poetry remove black --group dev
-
 # Set a custom collection path for all ansible commands
 # Note: This only allows for one path, not colon-separated, because we use it
 # elsewhere
