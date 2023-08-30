@@ -16,6 +16,8 @@ jobs:
     env:
       INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
       INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
+      PYTHON_VER: "${{ matrix.python-version }}"
+      NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
@@ -30,6 +32,8 @@ jobs:
     env:
       INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
       INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
+      PYTHON_VER: "${{ matrix.python-version }}"
+      NAUTOBOT_VER: "${{ matrix.nautobot-version }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
