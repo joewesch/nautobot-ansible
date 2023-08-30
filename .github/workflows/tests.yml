@@ -47,7 +47,7 @@ jobs:
       - "lint"
   integration_partial:
     # Only run a partial of integration tests on normal PRs
-    if: ${{ inputs.full-integration == 'false' }}
+    if: ${{ inputs.full-integration == false }}
     uses: ./.github/workflows/integration_tests.yml
     with:
       python-version: "3.9"
@@ -55,7 +55,7 @@ jobs:
     needs:
       - "unit"
   integration_full:
-    if: ${{ inputs.full-integration == 'true' }}
+    if: ${{ inputs.full-integration == true }}
     uses: ./.github/workflows/integration_tests.yml
     strategy:
       fail-fast: false
