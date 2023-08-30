@@ -68,6 +68,14 @@ def sort_hostvar_arrays(obj):
             host["services"] = sorted(services, key=itemgetter("name"))
 
 
+def sort_groups(obj):
+    for _, group in obj.items():
+        if group.get("children"):
+            group["children"] = sorted(group["children"])
+        elif group.get("hosts"):
+            group["hosts"] = sorted(group["hosts"])
+
+
 def read_json(filename):
     with open(filename, "r") as f:
         return json.loads(f.read())
@@ -133,6 +141,9 @@ def main():
 
         sort_hostvar_arrays(data_a)
         sort_hostvar_arrays(data_b)
+
+        sort_groups(data_a)
+        sort_groups(data_b)
 
         # Perform the diff
         # syntax='symmetric' will produce output that prints both the before and after as "$insert" and "$delete"
