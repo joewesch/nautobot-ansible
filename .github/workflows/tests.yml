@@ -7,7 +7,7 @@ on: # yamllint disable
       runs-on:
         description: "The OS to run the job on"
         required: false
-        default: "ubuntu-20.04"
+        default: "ubuntu-22.04"
         type: string
       full-integration:
         description: "Run full integration tests"
