@@ -1,63 +1,14 @@
 ---
-name: "Jobs"
+name: "Release"
 on: # yamllint disable
-  workflow_call:
-    inputs:
-      # Default options for all jobs
-      runs-on:
-        description: "The OS to run the job on"
-        required: false
-        default: "ubuntu-20.04"
-        type: string
+  release:
+    types: [published]
 
 jobs:
-  lint:
-    runs-on: "${{ inputs.runs-on }}"
-    steps:
-      - name: "Check out repository code"
-        uses: "actions/checkout@v3"
-      - name: "Install invoke"
-        run: "pip install -U pip && pip install invoke"
-      - name: "Linting"
-        run: "invoke lint"
-  unit:
-    runs-on: "${{ inputs.runs-on }}"
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version:
-          - "3.9"
-          - "3.10"
-          - "3.11"
-    env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ matrix.python-version }}"
-    steps:
-      - name: "Check out repository code"
-        uses: "actions/checkout@v3"
-      - name: "Install invoke"
-        run: "pip install -U pip && pip install invoke"
-      - name: "Tests"
-        run: "invoke unit"
-    needs:
-      - "lint"
-  integration:
-    uses: ./.github/workflows/integration_tests.yml
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version:
-          - "3.9"
-          - "3.10"
-          - "3.11"
-        nautobot-version:
-          - "1.4"
-          - "1.5"
-          - "1.6"
+  tests:
+    uses: ./.github/workflows/tests.yml
     with:
-      python-version: "${{ matrix.python-version }}"
-      nautobot-version: "${{ matrix.nautobot-version }}"
-    needs:
-      - "unit"
+      full-integration: true
   publish_github:
     name: "Publish to GitHub"
     runs-on: "${{ inputs.runs-on }}"
@@ -82,7 +33,7 @@ jobs:
           overwrite: true
           file_glob: true
     needs:
-      - "integration"
+      - "tests"
   publish_galaxy:
     name: "Publish to Ansible Galaxy"
     runs-on: "${{ inputs.runs-on }}"
@@ -101,4 +52,4 @@ jobs:
       - name: "Publish the collection"
         run: "ansible-galaxy collection publish build/* --api-key=${{ secrets.GALAXY_API_TOKEN }}"
     needs:
-      - "integration"
+      - "tests"
