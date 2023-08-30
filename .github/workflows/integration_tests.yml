@@ -22,8 +22,8 @@ jobs:
   integration_ansible_2_14:
     runs-on: "${{ inputs.runs-on }}"
     env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ input.python-version }}"
-      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ input.nautobot-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ inputs.python-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ inputs.nautobot-version }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
@@ -36,8 +36,8 @@ jobs:
   integration_ansible_2_15:
     runs-on: "${{ inputs.runs-on }}"
     env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ input.python-version }}"
-      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ input.nautobot-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ inputs.python-version }}"
+      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ inputs.nautobot-version }}"
     steps:
       - name: "Check out repository code"
         uses: "actions/checkout@v3"
