@@ -192,7 +192,6 @@ def collectstatic_changed(line):
 
 
 def main():
-
     # Commands that are known to use the --noinput flag
     commands_with_noinput = {
         "createsuperuser",
