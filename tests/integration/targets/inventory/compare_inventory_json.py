@@ -68,7 +68,7 @@ def sort_hostvar_arrays(obj):
 
 
 def sort_groups(obj):
-    for _, group in obj.items():
+    for group_name, group in obj.items():
         if group.get("children"):
             group["children"] = sorted(group["children"])
         elif group.get("hosts"):
@@ -128,6 +128,7 @@ def main():
         # This makes diffs more easily readable to ensure changes to test data look correct.
         remove_keys(data_a, KEYS_REMOVE)
         sort_hostvar_arrays(data_a)
+        sort_groups(data_a)
         write_json(args.filename_b, data_a)
 
     else:

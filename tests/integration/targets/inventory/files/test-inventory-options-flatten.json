@@ -9,8 +9,8 @@
     },
     "Test_Cluster_2": {
         "hosts": [
-            "test104-vm",
-            "Test VM With Spaces"
+            "Test VM With Spaces",
+            "test104-vm"
         ]
     },
     "Test_Rack": {
@@ -776,73 +776,73 @@
     "active": {
         "hosts": [
             "R1-Device",
-            "test100",
-            "TestDeviceR1",
             "Test Nexus One",
+            "Test VM With Spaces",
+            "TestDeviceR1",
+            "test100",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm",
-            "Test VM With Spaces"
+            "test104-vm"
         ]
     },
     "all": {
         "children": [
-            "ungrouped",
-            "test_site2",
-            "Test_Rack_Site_2",
-            "test_rack_role",
-            "core_switch",
-            "cisco_test",
-            "cisco",
-            "active",
-            "test_tenant",
-            "test_tenant_group",
-            "Test_Rack",
-            "test_rack_group",
-            "parent_rack_group",
-            "nexus_parent",
             "Test_Cluster",
+            "Test_Cluster_2",
+            "Test_Rack",
+            "Test_Rack_Site_2",
+            "active",
+            "cisco",
+            "cisco_test",
+            "core_switch",
+            "is_virtual",
+            "nexus_parent",
+            "other_region",
+            "parent_rack_group",
+            "parent_region",
             "test_cluster_group",
             "test_cluster_type",
-            "is_virtual",
-            "Test_Cluster_2",
-            "other_region",
-            "parent_region"
+            "test_rack_group",
+            "test_rack_role",
+            "test_site2",
+            "test_tenant",
+            "test_tenant_group",
+            "ungrouped"
         ]
     },
     "cisco": {
         "hosts": [
             "R1-Device",
-            "test100",
+            "Test Nexus One",
             "TestDeviceR1",
-            "Test Nexus One"
+            "test100"
         ]
     },
     "cisco_test": {
         "hosts": [
             "R1-Device",
-            "test100",
-            "TestDeviceR1"
+            "TestDeviceR1",
+            "test100"
         ]
     },
     "core_switch": {
         "hosts": [
             "R1-Device",
-            "test100",
+            "Test Nexus One",
             "TestDeviceR1",
-            "Test Nexus One"
+            "test100"
         ]
     },
     "is_virtual": {
         "hosts": [
+            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm",
-            "Test VM With Spaces"
+            "test104-vm"
         ]
     },
     "nexus_parent": {
@@ -870,12 +870,12 @@
     },
     "test_cluster_type": {
         "hosts": [
+            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm",
-            "Test VM With Spaces"
+            "test104-vm"
         ]
     },
     "test_rack_group": {
@@ -895,9 +895,9 @@
     },
     "test_site": {
         "hosts": [
-            "test100",
-            "TestDeviceR1",
             "Test Nexus One",
+            "TestDeviceR1",
+            "test100",
             "test100-vm",
             "test101-vm",
             "test102-vm",

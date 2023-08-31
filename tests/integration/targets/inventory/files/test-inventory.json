@@ -777,29 +777,29 @@
     },
     "all": {
         "children": [
-            "ungrouped",
-            "site_test_site2",
-            "rack_Test_Rack_Site_2",
-            "rack_role_test_rack_role",
-            "role_core_switch",
-            "device_type_cisco_test",
-            "manufacturer_cisco",
-            "status_active",
-            "tenant_test_tenant",
-            "service_ssh",
-            "service_http",
-            "rack_Test_Rack",
-            "rack_group_test_rack_group",
-            "rack_group_parent_rack_group",
-            "device_type_nexus_parent",
-            "service_telnet",
             "cluster_Test_Cluster",
+            "cluster_Test_Cluster_2",
             "cluster_group_test_cluster_group",
             "cluster_type_test_cluster_type",
+            "device_type_cisco_test",
+            "device_type_nexus_parent",
             "is_virtual",
-            "cluster_Test_Cluster_2",
+            "manufacturer_cisco",
+            "rack_Test_Rack",
+            "rack_Test_Rack_Site_2",
+            "rack_group_parent_rack_group",
+            "rack_group_test_rack_group",
+            "rack_role_test_rack_role",
             "region_other_region",
-            "region_parent_region"
+            "region_parent_region",
+            "role_core_switch",
+            "service_http",
+            "service_ssh",
+            "service_telnet",
+            "site_test_site2",
+            "status_active",
+            "tenant_test_tenant",
+            "ungrouped"
         ]
     },
     "cluster_Test_Cluster": {
@@ -812,8 +812,8 @@
     },
     "cluster_Test_Cluster_2": {
         "hosts": [
-            "test104-vm",
-            "Test VM With Spaces"
+            "Test VM With Spaces",
+            "test104-vm"
         ]
     },
     "cluster_group_test_cluster_group": {
@@ -826,19 +826,19 @@
     },
     "cluster_type_test_cluster_type": {
         "hosts": [
+            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm",
-            "Test VM With Spaces"
+            "test104-vm"
         ]
     },
     "device_type_cisco_test": {
         "hosts": [
             "R1-Device",
-            "test100",
-            "TestDeviceR1"
+            "TestDeviceR1",
+            "test100"
         ]
     },
     "device_type_nexus_parent": {
@@ -848,20 +848,20 @@
     },
     "is_virtual": {
         "hosts": [
+            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm",
-            "Test VM With Spaces"
+            "test104-vm"
         ]
     },
     "manufacturer_cisco": {
         "hosts": [
             "R1-Device",
-            "test100",
+            "Test Nexus One",
             "TestDeviceR1",
-            "Test Nexus One"
+            "test100"
         ]
     },
     "rack_Test_Rack": {
@@ -902,9 +902,9 @@
     "role_core_switch": {
         "hosts": [
             "R1-Device",
-            "test100",
+            "Test Nexus One",
             "TestDeviceR1",
-            "Test Nexus One"
+            "test100"
         ]
     },
     "service_http": {
@@ -914,8 +914,8 @@
     },
     "service_ssh": {
         "hosts": [
-            "test100",
-            "Test VM With Spaces"
+            "Test VM With Spaces",
+            "test100"
         ]
     },
     "service_telnet": {
@@ -925,9 +925,9 @@
     },
     "site_test_site": {
         "hosts": [
-            "test100",
-            "TestDeviceR1",
             "Test Nexus One",
+            "TestDeviceR1",
+            "test100",
             "test100-vm",
             "test101-vm",
             "test102-vm",
@@ -942,15 +942,15 @@
     "status_active": {
         "hosts": [
             "R1-Device",
-            "test100",
-            "TestDeviceR1",
             "Test Nexus One",
+            "Test VM With Spaces",
+            "TestDeviceR1",
+            "test100",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm",
-            "Test VM With Spaces"
+            "test104-vm"
         ]
     },
     "tenant_test_tenant": {
