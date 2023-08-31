@@ -9,8 +9,8 @@
     },
     "Test_Cluster_2": {
         "hosts": [
-            "Test VM With Spaces",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "Test_Rack": {
@@ -49,6 +49,7 @@
                 "dns_name": "nexus.example.com",
                 "interfaces": [
                     {
+                        "bridge": null,
                         "cable": null,
                         "cable_peer": null,
                         "cable_peer_type": null,
@@ -94,6 +95,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Ethernet1/1",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "type": {
@@ -103,6 +105,7 @@
                         "untagged_vlan": null
                     },
                     {
+                        "bridge": null,
                         "cable": null,
                         "cable_peer": null,
                         "cable_peer_type": null,
@@ -148,6 +151,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Ethernet2/1",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "type": {
@@ -199,6 +203,8 @@
                 "cluster_type": "test-cluster-type",
                 "interfaces": [
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth0",
                         "enabled": true,
@@ -207,6 +213,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth0",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -216,6 +223,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth1",
                         "enabled": true,
@@ -224,6 +233,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth1",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -290,6 +300,7 @@
                 "device_type": "cisco-test",
                 "interfaces": [
                     {
+                        "bridge": null,
                         "cable": null,
                         "cable_peer": null,
                         "cable_peer_type": null,
@@ -335,6 +346,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "GigabitEthernet1",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "type": {
@@ -344,6 +356,7 @@
                         "untagged_vlan": null
                     },
                     {
+                        "bridge": null,
                         "cable": null,
                         "cable_peer": null,
                         "cable_peer_type": null,
@@ -389,6 +402,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "GigabitEthernet2",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "type": {
@@ -476,6 +490,8 @@
                 "cluster_type": "test-cluster-type",
                 "interfaces": [
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth0",
                         "enabled": true,
@@ -484,6 +500,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth0",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -493,6 +510,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth1",
                         "enabled": true,
@@ -501,6 +520,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth1",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -510,6 +530,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth2",
                         "enabled": true,
@@ -518,6 +540,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth2",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -527,6 +550,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth3",
                         "enabled": true,
@@ -535,6 +560,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth3",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -544,6 +570,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth4",
                         "enabled": true,
@@ -552,6 +580,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth4",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -580,6 +609,8 @@
                 "cluster_type": "test-cluster-type",
                 "interfaces": [
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth0",
                         "enabled": true,
@@ -588,6 +619,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth0",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -597,6 +629,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth1",
                         "enabled": true,
@@ -605,6 +639,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth1",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -614,6 +649,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth2",
                         "enabled": true,
@@ -622,6 +659,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth2",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -631,6 +669,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth3",
                         "enabled": true,
@@ -639,6 +679,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth3",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -648,6 +689,8 @@
                         }
                     },
                     {
+                        "bridge": null,
+                        "custom_fields": {},
                         "description": "",
                         "display": "Eth4",
                         "enabled": true,
@@ -656,6 +699,7 @@
                         "mode": null,
                         "mtu": null,
                         "name": "Eth4",
+                        "parent_interface": null,
                         "tagged_vlans": [],
                         "tags": [],
                         "untagged_vlan": null,
@@ -732,73 +776,73 @@
     "active": {
         "hosts": [
             "R1-Device",
-            "Test Nexus One",
-            "Test VM With Spaces",
-            "TestDeviceR1",
             "test100",
+            "TestDeviceR1",
+            "Test Nexus One",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "all": {
         "children": [
-            "Test_Cluster",
-            "Test_Cluster_2",
-            "Test_Rack",
-            "Test_Rack_Site_2",
-            "active",
-            "cisco",
-            "cisco_test",
-            "core_switch",
-            "is_virtual",
-            "nexus_parent",
-            "other_region",
-            "parent_rack_group",
-            "parent_region",
-            "test_cluster_group",
-            "test_cluster_type",
-            "test_rack_group",
-            "test_rack_role",
+            "ungrouped",
             "test_site2",
+            "Test_Rack_Site_2",
+            "test_rack_role",
+            "core_switch",
+            "cisco_test",
+            "cisco",
+            "active",
             "test_tenant",
             "test_tenant_group",
-            "ungrouped"
+            "Test_Rack",
+            "test_rack_group",
+            "parent_rack_group",
+            "nexus_parent",
+            "Test_Cluster",
+            "test_cluster_group",
+            "test_cluster_type",
+            "is_virtual",
+            "Test_Cluster_2",
+            "other_region",
+            "parent_region"
         ]
     },
     "cisco": {
         "hosts": [
             "R1-Device",
-            "Test Nexus One",
+            "test100",
             "TestDeviceR1",
-            "test100"
+            "Test Nexus One"
         ]
     },
     "cisco_test": {
         "hosts": [
             "R1-Device",
-            "TestDeviceR1",
-            "test100"
+            "test100",
+            "TestDeviceR1"
         ]
     },
     "core_switch": {
         "hosts": [
             "R1-Device",
-            "Test Nexus One",
+            "test100",
             "TestDeviceR1",
-            "test100"
+            "Test Nexus One"
         ]
     },
     "is_virtual": {
         "hosts": [
-            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "nexus_parent": {
@@ -826,12 +870,12 @@
     },
     "test_cluster_type": {
         "hosts": [
-            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "test_rack_group": {
@@ -851,9 +895,9 @@
     },
     "test_site": {
         "hosts": [
-            "Test Nexus One",
-            "TestDeviceR1",
             "test100",
+            "TestDeviceR1",
+            "Test Nexus One",
             "test100-vm",
             "test101-vm",
             "test102-vm",

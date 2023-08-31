@@ -16,7 +16,7 @@ from operator import itemgetter
 # Nautobot includes "created" and "last_updated" times on objects. These end up in the interfaces objects that are included verbatim from the Nautobot API.
 # "url" may be different if local tests use a different host/port
 # Remove these from files saved in git as test data
-KEYS_REMOVE = frozenset(["created", "id", "last_updated", "rack_id", "url"])
+KEYS_REMOVE = frozenset(["created", "id", "last_updated", "rack_id", "url", "notes_url"])
 
 # Ignore these when performing diffs as they will be different for each test run
 KEYS_IGNORE = frozenset()
@@ -65,6 +65,14 @@ def sort_hostvar_arrays(obj):
         services = host.get("services")
         if services:
             host["services"] = sorted(services, key=itemgetter("name"))
+
+
+def sort_groups(obj):
+    for _, group in obj.items():
+        if group.get("children"):
+            group["children"] = sorted(group["children"])
+        elif group.get("hosts"):
+            group["hosts"] = sorted(group["hosts"])
 
 
 def read_json(filename):
@@ -132,6 +140,9 @@ def main():
 
         sort_hostvar_arrays(data_a)
         sort_hostvar_arrays(data_b)
+
+        sort_groups(data_a)
+        sort_groups(data_b)
 
         # Perform the diff
         # syntax='symmetric' will produce output that prints both the before and after as "$insert" and "$delete"

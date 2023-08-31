@@ -364,15 +364,15 @@
     "ungrouped": {
         "hosts": [
             "R1-Device",
-            "Test Nexus One",
-            "Test VM With Spaces",
-            "TestDeviceR1",
             "test100",
+            "TestDeviceR1",
+            "Test Nexus One",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     }
 }

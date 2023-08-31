@@ -9,8 +9,8 @@
     },
     "Test_Cluster_2": {
         "hosts": [
-            "Test VM With Spaces",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "Test_Rack": {
@@ -215,79 +215,79 @@
     "active": {
         "hosts": [
             "R1-Device",
-            "Test VM With Spaces",
+            "test100",
             "TestDeviceR1",
             "VC1",
-            "test100",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "all": {
         "children": [
-            "Test_Cluster",
-            "Test_Cluster_2",
-            "Test_Rack",
+            "ungrouped",
+            "test_site2",
             "Test_Rack_Site_2",
-            "active",
-            "cisco",
-            "cisco_test",
+            "test_rack_role",
             "core_switch",
-            "is_virtual",
+            "cisco_test",
+            "cisco",
+            "active",
+            "test_tenant",
             "jinja_test_group",
-            "nexus_parent",
-            "other_region",
+            "Test_Rack",
+            "test_rack_group",
             "parent_rack_group",
-            "parent_region",
+            "nexus_parent",
+            "Test_Cluster",
             "test_cluster_group",
             "test_cluster_type",
-            "test_rack_group",
-            "test_rack_role",
-            "test_site2",
-            "test_tenant",
-            "ungrouped"
+            "is_virtual",
+            "Test_Cluster_2",
+            "other_region",
+            "parent_region"
         ]
     },
     "cisco": {
         "hosts": [
             "R1-Device",
+            "test100",
             "TestDeviceR1",
-            "VC1",
-            "test100"
+            "VC1"
         ]
     },
     "cisco_test": {
         "hosts": [
             "R1-Device",
-            "TestDeviceR1",
-            "test100"
+            "test100",
+            "TestDeviceR1"
         ]
     },
     "core_switch": {
         "hosts": [
             "R1-Device",
+            "test100",
             "TestDeviceR1",
-            "VC1",
-            "test100"
+            "VC1"
         ]
     },
     "is_virtual": {
         "hosts": [
-            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "jinja_test_group": {
         "hosts": [
-            "Test VM With Spaces",
-            "TestDeviceR1"
+            "TestDeviceR1",
+            "Test VM With Spaces"
         ]
     },
     "nexus_parent": {
@@ -315,12 +315,12 @@
     },
     "test_cluster_type": {
         "hosts": [
-            "Test VM With Spaces",
             "test100-vm",
             "test101-vm",
             "test102-vm",
             "test103-vm",
-            "test104-vm"
+            "test104-vm",
+            "Test VM With Spaces"
         ]
     },
     "test_rack_group": {
@@ -340,9 +340,9 @@
     },
     "test_site": {
         "hosts": [
+            "test100",
             "TestDeviceR1",
             "VC1",
-            "test100",
             "test100-vm",
             "test101-vm",
             "test102-vm",
