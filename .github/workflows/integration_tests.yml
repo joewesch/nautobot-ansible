@@ -3,7 +3,6 @@ name: "Integration Tests"
 on: # yamllint disable
   workflow_call:
     inputs:
-      # Default options for all jobs
       runs-on:
         description: "The OS to run the job on"
         required: false
