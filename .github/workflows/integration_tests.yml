@@ -17,27 +17,13 @@ on: # yamllint disable
         description: "The Nautobot version to use"
         required: true
         type: string
+      ansible-version:
+        description: "The Ansible version to use"
+        required: true
+        type: string
 
 jobs:
-  integration_ansible_2_14:
-    runs-on: "${{ inputs.runs-on }}"
-    env:
-      INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ inputs.python-version }}"
-      INVOKE_NAUTOBOT_ANSIBLE_NAUTOBOT_VER: "${{ inputs.nautobot-version }}"
-    steps:
-      - name: "Check out repository code"
-        uses: "actions/checkout@v3"
-      - name: "Set up Python"
-        uses: "actions/setup-python@v3"
-        with:
-          python-version: "${{ inputs.python-version }}"
-      - name: "Install invoke"
-        run: "pip install -U pip && pip install invoke"
-      - name: "Start containers"
-        run: "invoke start"
-      - name: "Tests"
-        run: "invoke integration"
-  integration_ansible_2_15:
+  integration:
     runs-on: "${{ inputs.runs-on }}"
     env:
       INVOKE_NAUTOBOT_ANSIBLE_PYTHON_VER: "${{ inputs.python-version }}"
@@ -53,8 +39,8 @@ jobs:
         run: "pip install -U pip && pip install invoke"
       - name: "Install poetry"
         run: "curl -sSL https://install.python-poetry.org | python3 -"
-      - name: "Install ansible-core 2.15"
-        run: "poetry add ansible-core@~2.15"
+      - name: "Install ansible-core"
+        run: "poetry add ansible-core@~${{ inputs.ansible-version }}"
       - name: "Start containers"
         run: "invoke start"
       - name: "Tests"
